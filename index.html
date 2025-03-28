@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio</title>
+    <style>
+        /* Основной стиль */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Фон с размытием */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg'); /* Замените на ваш путь к изображению */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1; /* Фон будет под всеми элементами */
+        }
+
+        /* Контейнер для контента */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1.5s forwards; /* Анимация появления */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Стили для раздела с фото */
+        .lebenslauf-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .lebenslauf-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        /* Секцию с проектами */
+        .projects-section {
+            margin-top: 40px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards; /* Анимация для проектов */
+        }
+
+        .project h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .project a {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .project a:hover {
+            background-color: #45a049;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Стиль для кнопок */
+        .buttons-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .buttons-section button:hover {
+            background-color: #45a049;
+        }
+
+        /* Стиль для раздела "Lebenslauf" */
+        .lebenslauf {
+            margin-top: 20px;
+        }
+
+        /* Скрытые секции */
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Фон с размытием -->
+    <div class="background"></div>
+
+    <div class="container">
+        <h1>Willkommen auf meiner Seite</h1>
+
+        <!-- Кнопка "Über mich" -->
+        <div class="buttons-section">
+            <button onclick="toggleSection('lebenslauf')">Über mich</button>
+            <button onclick="toggleSection('projects')">Projekte anzeigen</button>
+        </div>
+
+        <!-- Раздел "Über mich" (Lebenslauf) -->
+        <div class="lebenslauf hidden" id="lebenslauf">
+            <div class="lebenslauf-info">
+                <img src="my-photo.jpg" alt="Mein Foto"> <!-- Добавляем фото -->
+                <div>
+                    <h2>Lebenslauf</h2>
+                    <p><strong>Name:</strong> Oleksandr Kuklenko</p>
+                    <p><strong>Geburtsdatum:</strong> 22.11.2005</p>
+                    <p><strong>Adresse:</strong> Ferdinand-Henze-Straße 1, 33154 Salzkotten</p>
+                    <p><strong>Telefon:</strong> +491747771724</p>
+                    <p><strong>E-Mail:</strong> <a href="mailto:kuklenko.s69@gmail.com">kuklenko.s69@gmail.com</a></p>
+                    <p><strong>Bildung:</strong> Ich bin derzeit im zweiten Jahr an der Nationalen Luftfahrtuniversität Charkiw (ХАІ) im Bereich Informatik und Softwaretechnik.</p>
+                    <p><strong>Sprachen:</strong> Deutsch (B1-B2), Englisch (fließend), Ukrainisch (Muttersprache), Russisch (fließend)</p>
+                    <p><strong>Kenntnisse:</strong> Front-End-Programmierung, Objektorientierte Programmierung (Java), Python-Programmierung</p>
+                    <p><strong>Hobbys:</strong> Softwareentwicklung, neue Technologien, Reisen, Sport.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Раздел с проектами -->
+        <div class="projects-section hidden" id="projects">
+            <!-- Проект ChatBot -->
+            <div class="project">
+                <h3>ChatBot</h3>
+                <p>Dies ist ein einfacher ChatBot, der in Java programmiert wurde. Sie können ihn herunterladen und ausprobieren.</p>
+                <a href="projects/chatbot.zip" download="ChatBot.zip">Download ChatBot Projekt</a>
+            </div>
+
+            <!-- Проект Hangman -->
+            <div class="project">
+                <h3>Hangman</h3>
+                <p>Dies ist ein einfaches Hangman-Spiel in Java. Sie können den Code herunterladen und ausprobieren.</p>
+                <a href="projects/hangman.zip" download="Hangman.zip">Download Hangman Projekt</a>
+            </div>
+
+            <!-- Проект Python калькулятор -->
+            <div class="project">
+                <h3>Python Rechner</h3>
+                <p>Dies ist ein einfacher Python-Rechner, den ich entwickelt habe. Sie können den Code in meinem GitHub-Repository einsehen und ausprobieren.</p>
+                <a href="https://github.com/sashakuklenko/calculator" target="_blank">Besuchen Sie mein GitHub-Repository</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функция для переключения между разделами
+        function toggleSection(sectionId) {
+            // Закрытие всех разделов
+            document.getElementById('lebenslauf').classList.add('hidden');
+            document.getElementById('projects').classList.add('hidden');
+            
+            // Открытие выбранного раздела
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
