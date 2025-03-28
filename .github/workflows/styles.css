@@ -1,0 +1,161 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li button {
+    color: white;
+    background-color: #333;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li button:hover {
+    background-color: white;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.about-content {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.bio-text ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.bio-text ul li {
+    margin-bottom: 8px;
+}
+
+.bio-text h4 {
+    margin-top: 20px;
+    color: #4CAF50;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    color: #4CAF50;
+}
+
+.project p {
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.project-link:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img {
+        margin-bottom: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
